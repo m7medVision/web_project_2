@@ -4,8 +4,8 @@ import { api } from "../utils/api.js";
 const AuthContext = createContext({
   user: null,
   loading: true,
-  login: async () => {},
-  register: async () => {},
+  login: async (email, password) => {},
+  register: async (email, password) => {},
   logout: async () => {},
 });
 

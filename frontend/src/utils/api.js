@@ -47,4 +47,41 @@ export const api = {
       });
     },
   },
+
+  jobs: {
+    async getAll() {
+      return api.request("jobs");
+    },
+
+    async create(jobData) {
+      return api.request("jobs", {
+        method: "POST",
+        body: JSON.stringify(jobData),
+      });
+    },
+
+    async getMyJobs() {
+      return api.request("my-jobs");
+    },
+
+    async deleteJob(jobId) {
+      return api.request("my-jobs", {
+        method: "DELETE",
+        body: JSON.stringify({ job_id: jobId }),
+      });
+    },
+  },
+
+  applications: {
+    async getAll() {
+      return api.request("applications");
+    },
+
+    async submit(applicationData) {
+      return api.request("applications", {
+        method: "POST",
+        body: JSON.stringify(applicationData),
+      });
+    },
+  },
 };
