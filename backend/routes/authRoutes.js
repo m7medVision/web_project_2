@@ -46,7 +46,6 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
     const token = await createSession(user.id);
-    console.log(token);
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
