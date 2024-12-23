@@ -9,6 +9,7 @@ import CreateJobModal from "./CreateJobModal";
 
 export const Navigation = () => {
   const { user, loading } = useAuth();
+  const auth = useAuth();
   const navigate = useNavigate();
 
   const [showRegister, setShowRegister] = useState(false);
@@ -73,10 +74,6 @@ export const Navigation = () => {
                     id="user-nav-dropdown"
                     align="end"
                   >
-                    <LinkContainer to="/profile">
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
-                    </LinkContainer>
-                    <NavDropdown.Divider />
                     <NavDropdown.Item as="button" onClick={() => auth.logout()}>
                       Logout
                     </NavDropdown.Item>
